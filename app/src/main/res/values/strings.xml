@@ -2,4 +2,15 @@
     <string name="app_name">NameGame</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="name_list">
+        <item name="black_widow">Black Widow</item>
+        <item name="captain_america">Captain America</item>
+        <item name="gambit">Gambit</item>
+        <item name="hawkeye">Hawkeye</item>
+        <item name="hulk">Hulk</item>
+        <item name="iron_man">Iron Man</item>
+        <item name="spider_man">Spider Man</item>
+        <item name="thor">Thor</item>
+    </string-array>
 </resources>

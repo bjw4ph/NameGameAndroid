@@ -1,16 +1,12 @@
-package edu.hooapps.android.namegame;
+package edu.hooapps.android.namegame.activity;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
+import edu.hooapps.android.namegame.R;
+import edu.hooapps.android.namegame.fragment.GameFragment;
 
 public class GameActivity extends ActionBarActivity {
 
@@ -20,7 +16,7 @@ public class GameActivity extends ActionBarActivity {
         setContentView(R.layout.activity_game);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new GameFragment())
                     .commit();
         }
     }
@@ -46,21 +42,5 @@ public class GameActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_game, container, false);
-            return rootView;
-        }
     }
 }
