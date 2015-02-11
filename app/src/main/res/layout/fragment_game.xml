@@ -21,22 +21,22 @@
             android:contentDescription="@string/image_desc"/>
 
         <Button
-            android:id="@+id/option_1"
+            android:id="@+id/button_option_1"
             android:layout_width="fill_parent"
             android:layout_height="56dp" />
 
         <Button
-            android:id="@+id/option_2"
+            android:id="@+id/button_option_2"
             android:layout_width="fill_parent"
             android:layout_height="56dp" />
 
         <Button
-            android:id="@+id/option_3"
+            android:id="@+id/button_option_3"
             android:layout_width="fill_parent"
             android:layout_height="56dp" />
 
         <Button
-            android:id="@+id/option_4"
+            android:id="@+id/button_option_4"
             android:layout_width="fill_parent"
             android:layout_height="56dp" />
 
