@@ -2,8 +2,8 @@ package edu.hooapps.android.namegame.data;
 
 import edu.hooapps.android.namegame.R;
 
-final class Data {
-    static final int[] imageResIds = {
+public final class Data {
+    public static final int[] imageResIds = {
             R.drawable.black_widow,
             R.drawable.captain_america,
             R.drawable.gambit,
