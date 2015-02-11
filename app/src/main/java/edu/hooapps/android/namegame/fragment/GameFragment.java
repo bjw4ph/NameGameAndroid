@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,8 +21,10 @@ import edu.hooapps.android.namegame.data.Data;
  * A placeholder fragment containing a simple view.
  */
 public class GameFragment extends Fragment {
-
+    // Vars
     private ArrayList<NameImagePair> itemList;
+    private int score;
+    private int numQuestions;
 
     // Views
     ImageView questionImageView;
@@ -29,6 +32,8 @@ public class GameFragment extends Fragment {
     Button option2Button;
     Button option3Button;
     Button option4Button;
+    TextView numQuestionTextView;
+    TextView scoreTextView;
 
     public GameFragment() {
     }
@@ -41,6 +46,10 @@ public class GameFragment extends Fragment {
         // Load the data into the ArrayList
         loadData();
 
+        // Reset the score and question count to zero
+        score = 0;
+        numQuestions = 0;
+
         // Retrieve the views from the layout parent (rootView)
         /* NOTE: rootView.findViewById() returns a generic view object
             Each view that is returned has to be cast to its appropriate type
@@ -51,6 +60,8 @@ public class GameFragment extends Fragment {
         option2Button = (Button) rootView.findViewById(R.id.button_option_2);
         option3Button = (Button) rootView.findViewById(R.id.button_option_3);
         option4Button = (Button) rootView.findViewById(R.id.button_option_4);
+        numQuestionTextView = (TextView) rootView.findViewById(R.id.text_num_questions);
+        scoreTextView = (TextView) rootView.findViewById(R.id.text_score);
 
         // Set tags for each view to represent index of in list
         option1Button.setTag(0);
@@ -68,6 +79,10 @@ public class GameFragment extends Fragment {
      * Display the data on the views and setup the question logic
      */
     private void setUpNextQuestion() {
+        // Update the score and question TextViews
+        scoreTextView.setText("Score: " + score);
+        numQuestionTextView.setText("Questions: " + numQuestions);
+
         // Shuffle the list of items
         Collections.shuffle(itemList);
 
@@ -117,7 +132,14 @@ public class GameFragment extends Fragment {
      * Automatically load the next question (for now)
      */
     private void onCorrectAnswer() {
+        // Display message to the user
         Toast.makeText(this.getActivity(), "Correct", Toast.LENGTH_SHORT).show();
+
+        // Increment the number of questions and score
+        score++;
+        numQuestions++;
+
+        // Setup the next question
         setUpNextQuestion();
     }
 
@@ -126,7 +148,13 @@ public class GameFragment extends Fragment {
      * Automatically load the next question (for now)
      */
     private void onIncorrectAnswer() {
+        // Display message to the user
         Toast.makeText(this.getActivity(), "Incorrect", Toast.LENGTH_SHORT).show();
+
+        // Increment the number of questions
+        numQuestions++;
+
+        // Setup the next question
         setUpNextQuestion();
     }
 
