@@ -17,9 +17,6 @@ import java.util.Collections;
 import edu.hooapps.android.namegame.R;
 import edu.hooapps.android.namegame.data.Data;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class GameFragment extends Fragment {
     // Vars
     private ArrayList<NameImagePair> itemList;

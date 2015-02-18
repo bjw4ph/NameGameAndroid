@@ -10,6 +10,15 @@
         <activity
             android:name=".activity.GameActivity"
             android:label="@string/app_name" >
+        </activity>
+
+        <!-- New Activities must be specified in the Manifest -->
+        <activity android:name=".activity.HomeActivity"
+            android:label="@string/app_name">
+
+            <!-- Move the intent-filter to this activity
+            This makes the application open HomeActivity when it is first launched
+            instead of opening GameActivity like before -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
